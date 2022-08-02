@@ -1,26 +1,34 @@
 import { Button } from '@mui/material';
-import { Container } from '@mui/system';
+import { ThemeProvider } from '@mui/material/styles';
+import { Container } from '@mui/material';
+import theme from './styles/theme';
+import Appbar from './components/appbar/index';
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Container
         maxWidth="xl"
         sx={{
-          
-          "&:hover": {
-            backgroundColor: "green"
-          }
-          
+          backgroundColor: "#fff"
         }}
       >
-        <Button 
-       
-        >
-            test
-        </Button>
-      </Container>
-    </div>
+        <Appbar />
+        {
+          /*
+            Banner
+            Promotions
+            title
+            Products
+            footer
+            searchBox
+            appdrawer
+          */
+        }
+        <Button variant="contained">Test</Button>
+
+      </Container>  
+    </ThemeProvider>
   );
 }
 
