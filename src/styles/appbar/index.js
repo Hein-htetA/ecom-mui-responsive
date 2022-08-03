@@ -29,3 +29,4 @@ export const MyList = styled(List)(({ type }) => ({
     justifyContent: 'center',
     alignItems: 'center'
 }));
+
