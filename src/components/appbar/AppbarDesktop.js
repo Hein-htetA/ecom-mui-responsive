@@ -1,6 +1,7 @@
-import { IconButton, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { AppbarContainer, AppbarHeader, MyList } from "../../styles/appbar";
 import SearchIcon from '@mui/icons-material/Search';
+import Actions from "./actions";
 
 export default function AppbarDesktop({ matches }) {
     return (
@@ -11,19 +12,18 @@ export default function AppbarDesktop({ matches }) {
          */
         <AppbarContainer>
             <AppbarHeader>My Bags</AppbarHeader>
-            <MyList type='row' sx={{'& > div': {
-                width: '10vw'
-            }}}>
+            <MyList type='row'>
                 <ListItemText primary="Home"/>
                 <ListItemText primary="Categories"/>
                 <ListItemText primary="Products"/>
                 <ListItemText primary="Contact us"/>
                 <ListItemButton>
-                    
-                        <SearchIcon />
-                  
+                    <ListItemIcon>
+                        <SearchIcon />  
+                    </ListItemIcon>
                 </ListItemButton>
             </MyList>
+            <Actions />
         </AppbarContainer>
     )
 }
