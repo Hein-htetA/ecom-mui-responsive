@@ -1,7 +1,8 @@
-import { Box, Typography } from '@mui/material';
+import { Box, colors, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import '@fontsource/montez';
 import List from '@mui/material/List';
+import { Colors } from '../theme';
 
 //container
 
@@ -30,3 +31,18 @@ export const MyList = styled(List)(({ type }) => ({
     alignItems: 'center'
 }));
 
+export const ActionIconsContainerDesktop = styled(Box) (() => ({
+
+}));
+
+export const ActionIconsContainerMobile = styled(Box) (() => ({
+    display: 'flex',
+    background: Colors.shaft,
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    alignItems: 'center',
+    zIndex: 99,
+    borderTop: `1px solid ${Colors.border}`
+}));
