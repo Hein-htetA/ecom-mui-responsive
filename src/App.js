@@ -1,8 +1,9 @@
-import { Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/material';
 import theme from './styles/theme';
 import Appbar from './components/appbar/index';
+import Banner from './components/banner';
+import Promotions from './components/promotions';
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
         }}
       >
         <Appbar />
+        <Banner />
+        <Promotions />
         {
           /*
-            Banner
-            Promotions
             title
             Products
             footer
@@ -25,8 +26,6 @@ function App() {
             appdrawer
           */
         }
-        <Button variant="contained">Test</Button>
-
       </Container>  
     </ThemeProvider>
   );
