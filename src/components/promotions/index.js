@@ -1,3 +1,4 @@
+import { Slide } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import { MessageText, PromotionsContainer } from "../../styles/promotions";
@@ -26,13 +27,15 @@ export default function Promotions() {
     
     return(
         <PromotionsContainer>
-            <Box
-                sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
-            >
-                <MessageText>
-                    {messages[messagesIndex]}
-                </MessageText>
-            </Box>
+            <Slide direction="left">
+                <Box
+                    sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                >
+                    <MessageText>
+                        {messages[messagesIndex]}
+                    </MessageText>
+                </Box>
+            </Slide>
         </PromotionsContainer>
     )
 }
