@@ -1,6 +1,6 @@
 import { Slide } from "@mui/material";
 import { Box } from "@mui/system";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MessageText, PromotionsContainer } from "../../styles/promotions";
 
 
@@ -11,23 +11,39 @@ const messages = [
 ];
 
 export default function Promotions() {
-    var [messagesIndex, setMessagesIndex] = useState(0);
-
+    const containerRef = useRef();
+    const [messagesIndex, setMessagesIndex] = useState(0);
+    const [show, setShow] = useState(true);
     useEffect(() => {
-      setTimeout(() => {
-        if (messagesIndex < messages.length - 1) {
-            setMessagesIndex(messagesIndex => (messagesIndex + 1));
-            console.count("in if");
-        } else {
-            setMessagesIndex(0)
-            console.count("in else");
-        }
-      }, 3000);  
+        const id = setTimeout(() => {
+            if (messagesIndex < messages.length - 1) {
+                setMessagesIndex(messagesIndex => (messagesIndex + 1));
+                setShow(true);
+            } else {
+                setMessagesIndex(0);
+                setShow(true);
+            }
+        }, 4000);  
+
+        const id1 = setTimeout(() => {
+            setShow(false);
+        }, 3000);
+
+        return (() => {
+            clearTimeout(id);
+            clearTimeout(id1);
+        })
     }, [messagesIndex]);
-    
+
+
     return(
-        <PromotionsContainer>
-            <Slide direction="left">
+        <PromotionsContainer ref={containerRef}>
+            <Slide container={containerRef.current} direction={show ? "left" : "right"} in={show}
+                timeout={{
+                    enter: 500,
+                    exit: 100
+                }}
+            >
                 <Box
                     sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                 >

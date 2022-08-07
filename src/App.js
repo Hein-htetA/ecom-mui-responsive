@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@mui/material/styles';
-import { Container } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import theme from './styles/theme';
 import Appbar from './components/appbar/index';
 import Banner from './components/banner';
@@ -26,6 +26,7 @@ function App() {
             appdrawer
           */
         }
+        <Box sx={{width: '100%', height: '500px'}}></Box>
       </Container>  
     </ThemeProvider>
   );
