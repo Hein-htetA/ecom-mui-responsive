@@ -4,6 +4,7 @@ import theme from './styles/theme';
 import Appbar from './components/appbar/index';
 import Banner from './components/banner';
 import Promotions from './components/promotions';
+import Products from './components/products';
 
 function App() {
   return (
@@ -17,10 +18,9 @@ function App() {
         <Appbar />
         <Banner />
         <Promotions />
+        <Products />
         {
           /*
-            title
-            Products
             footer
             searchBox
             appdrawer
