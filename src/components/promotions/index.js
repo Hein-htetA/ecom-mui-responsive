@@ -1,3 +1,6 @@
+import { Box } from "@mui/system";
+import { useEffect, useState } from "react";
+import { MessageText, PromotionsContainer } from "../../styles/promotions";
 
 
 const messages = [
@@ -7,8 +10,29 @@ const messages = [
 ];
 
 export default function Promotions() {
+    var [messagesIndex, setMessagesIndex] = useState(0);
 
+    useEffect(() => {
+      setTimeout(() => {
+        if (messagesIndex < messages.length - 1) {
+            setMessagesIndex(messagesIndex => (messagesIndex + 1));
+            console.count("in if");
+        } else {
+            setMessagesIndex(0)
+            console.count("in else");
+        }
+      }, 3000);  
+    }, [messagesIndex]);
+    
     return(
-        <h1>Promotions</h1>
+        <PromotionsContainer>
+            <Box
+                sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+            >
+                <MessageText>
+                    {messages[messagesIndex]}
+                </MessageText>
+            </Box>
+        </PromotionsContainer>
     )
 }

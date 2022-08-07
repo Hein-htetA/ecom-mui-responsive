@@ -1,8 +1,8 @@
-import { Box, colors, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, Typography } from '@mui/material';
 import '@fontsource/montez';
 import List from '@mui/material/List';
 import { Colors } from '../theme';
+import { styled } from '@mui/material/styles'
 
 //container
 
