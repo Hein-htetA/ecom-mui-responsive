@@ -1,6 +1,7 @@
 import { styled } from "@mui/system";
-import { Box } from "@mui/material";
+import { Box, IconButton, Button } from "@mui/material";
 import { Colors } from "../theme";
+import { slideInBottom, slideInRight } from "../../animation";
 
 export const Product = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -20,5 +21,51 @@ export const ProductImage = styled('img')(({ src, theme}) => ({
     [theme.breakpoints.down('md')]: {
         width: '80%',
         padding: '24px'
+    }
+}));
+
+export const ProductActoinButton = styled(IconButton)(() => ({
+    background: Colors.white,
+    margin: 4
+}));
+
+export const ProductionFavButton = styled(ProductActoinButton)(({ isfav, theme}) => ({
+    color: isfav ? Colors.primary : Colors.light,
+    [theme.breakpoints.up('md')]: {
+        position: 'absolute',
+        right: 0,
+        top: 0
+    }
+}));
+
+export const ProductAddCart = styled(Button)(({ show, theme }) => ({
+    width: '120px',
+    fontSize: '12px',
+    [theme.breakpoints.up('md')]: {
+        position: 'absolute',
+        bottom: '2%',
+        width: '300px',
+        padding: '10px 5px',
+        animation: 
+            show && `${slideInBottom} 0.5s cubic-bezier(0.250, 0.46, 0.450, 0.94) both`
+    },
+    background: Colors.secondary,
+    opacity: 0.9
+}));
+
+export const ProductMetaWrapper = styled(Box)(({ theme }) => ({
+    padding: 4,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+}));
+
+export const ProductActionWrapper = styled(Box)(({ show, theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        display: show ? 'visible' : 'none',
+        position: 'absolute',
+        right: 0,
+        top: '20%',
+        animation: show && `${slideInRight} 0.5s cubic-bezier(0.250, 0.46, 0.450, 0.94) both`
     }
 }))
