@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, lighten } from "@mui/material/styles";
 
 export const Colors = {
     primary: "#5f2c3e",
@@ -37,10 +37,31 @@ const theme = createTheme({
         }
     },
 
-    Components: {
+    components: {
         MuiButton: {
-            disableRipple: true,
-            disableElevation: true
+            defaultProps: {
+                disableRipple: true,
+                disableElevation: true
+            }
+        },
+        myShopButton: {
+            styleOverrides: {
+                root: {
+                    color: Colors.white,
+                },
+                primary: {
+                    background: Colors.primary,
+                    "&:hover": {
+                        background: Colors.danger,
+                    },
+                },
+                secondary: {
+                    background: Colors.secondary,
+                    "&:hover": {
+                        background: Colors.primary
+                    }
+                }
+            }
         }
     }
 });

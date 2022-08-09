@@ -1,6 +1,7 @@
-import { Container, Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Container, Grid, useMediaQuery, useTheme, Box } from "@mui/material";
 import { products } from "../../data";
 import SingleProduct from "./SingleProducts";
+import SingleProductDesktop from './SingleProductDesktop';
 
 export default function Products() {
     const theme = useTheme();
@@ -15,7 +16,8 @@ export default function Products() {
             xs={6}
             md={4}
         >
-            <SingleProduct product={product} matches={matches} />
+            {matches ? <SingleProduct product={product} matches={matches} /> :
+                    <SingleProductDesktop product={product} matches={matches} /> }
         </Grid>
     ))
 
@@ -30,5 +32,6 @@ export default function Products() {
                 {renderProducts}
             </Grid>
         </Container>
+      
     )
 }

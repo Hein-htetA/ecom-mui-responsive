@@ -5,6 +5,7 @@ import Appbar from './components/appbar/index';
 import Banner from './components/banner';
 import Promotions from './components/promotions';
 import Products from './components/products';
+import Footer from './components/footer';
 
 
 function App() {
@@ -19,13 +20,13 @@ function App() {
         <Appbar />
         <Banner />
         <Promotions />
-        <Box display={'flex'} justifyContent='center' padding={4}>
+        <Box display={'flex'} justifyContent='center' p={4}>
           <Typography variant='h4'>Our Products</Typography>
         </Box>
         <Products />
+        <Footer />
         {
           /*
-            footer
             searchBox
             appdrawer
           */

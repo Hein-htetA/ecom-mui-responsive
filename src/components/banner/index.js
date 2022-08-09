@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { BannerContainer, BannerContent, BannerDescription, BannerImg, BannerTitile } from "../../styles/banner";
+import { BannerContainer, BannerContent, BannerDescription, BannerImg, BannerShopButton, BannerTitile } from "../../styles/banner";
 
 export default function Banner() {
     return (
@@ -12,6 +12,7 @@ export default function Banner() {
                     Lorem ipsum dolor sit amet, cor incididunt ut
                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita
                 </BannerDescription>
+                <BannerShopButton variant="contained">Show Now</BannerShopButton>
             </BannerContent>
         </BannerContainer>
     )

@@ -24,13 +24,15 @@ export const ProductImage = styled('img')(({ src, theme}) => ({
     }
 }));
 
-export const ProductActoinButton = styled(IconButton)(() => ({
+export const ProductActionButton = styled(IconButton)(() => ({
     background: Colors.white,
     margin: 4
 }));
 
-export const ProductionFavButton = styled(ProductActoinButton)(({ isfav, theme}) => ({
-    color: isfav ? Colors.primary : Colors.light,
+export const ProductFavButton = styled(ProductActionButton, {
+    shouldForwardProp: (prop) => prop !== 'isFav'
+})(({ isFav, theme}) => ({
+    color: isFav ? Colors.primary : Colors.light,
     [theme.breakpoints.up('md')]: {
         position: 'absolute',
         right: 0,
@@ -38,13 +40,15 @@ export const ProductionFavButton = styled(ProductActoinButton)(({ isfav, theme})
     }
 }));
 
-export const ProductAddCart = styled(Button)(({ show, theme }) => ({
+export const ProductAddCart = styled(Button, {
+    shouldForwardProp: (prop) => prop !== 'show'
+})(({ show, theme }) => ({
     width: '120px',
     fontSize: '12px',
     [theme.breakpoints.up('md')]: {
         position: 'absolute',
         bottom: '2%',
-        width: '300px',
+        width: '100%',
         padding: '10px 5px',
         animation: 
             show && `${slideInBottom} 0.5s cubic-bezier(0.250, 0.46, 0.450, 0.94) both`
@@ -60,7 +64,9 @@ export const ProductMetaWrapper = styled(Box)(({ theme }) => ({
     alignItems: 'center',
 }));
 
-export const ProductActionWrapper = styled(Box)(({ show, theme }) => ({
+export const ProductActionWrapper = styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'show'
+})(({ show, theme }) => ({
     [theme.breakpoints.up('md')]: {
         display: show ? 'visible' : 'none',
         position: 'absolute',

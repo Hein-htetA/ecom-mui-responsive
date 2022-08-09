@@ -5,19 +5,34 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
 import { useState } from 'react';
-import { Box } from "@mui/system";
 
-export default function SingleProduct({product, matches}) {
+
+export default function SingleProductDesktop({product, matches}) {
+
+    const [showOptions, setShowOptions] = useState(false);
+
+    const handleMouseEnter = () => {
+        setShowOptions(true);
+    };
+
+    const handleMouseLeave = () => {
+        setShowOptions(false);
+    };
+
     return(
         <>
-            <Product>
+            <Product onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <ProductImage src={product.image} />
-                <ProductMeta product={product} matches={matches} />
-                <ProductActionWrapper>
-                    <Stack direction='row'>
-                        <ProductFavButton isFav={0}>
-                            <FavoriteIcon />
-                        </ProductFavButton>
+                <ProductFavButton isFav={0}>
+                    <FavoriteIcon />
+                </ProductFavButton>
+                
+                {showOptions && <ProductAddCart variant='contained' show={showOptions}>
+                    Add to cart
+                </ProductAddCart>}
+
+                <ProductActionWrapper show={showOptions}>
+                    <Stack direction='column'>
                         <ProductActionButton>
                             <ShareIcon color='primary' />
                         </ProductActionButton>
@@ -27,7 +42,7 @@ export default function SingleProduct({product, matches}) {
                     </Stack>
                 </ProductActionWrapper>
             </Product>
-            <ProductAddCart variant='contained'>Add to cart</ProductAddCart>
+            <ProductMeta product={product} matches={matches} />
         </>
     )
 }
