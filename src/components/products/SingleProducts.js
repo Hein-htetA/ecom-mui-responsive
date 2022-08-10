@@ -4,8 +4,6 @@ import ProductMeta from "./ProductMeta";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
-import { useState } from 'react';
-import { Box } from "@mui/system";
 
 export default function SingleProduct({product, matches}) {
     return(
