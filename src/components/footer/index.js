@@ -94,7 +94,7 @@ export default function Footer() {
                             variant='standard' />                      
                             <Button startIcon={<SendIcon sx={{ color: Colors.white }} />}
                                 sx={{ mt: 4, mb: 4 }}
-                                variant="contained">
+                                variant='contained'>
                                 Subscribe   
                             </Button>
                     </Stack>

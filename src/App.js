@@ -6,6 +6,8 @@ import Banner from './components/banner';
 import Promotions from './components/promotions';
 import Products from './components/products';
 import Footer from './components/footer';
+import AppDrawer from './components/drawer.js';
+import Search from './components/search';
 
 
 function App() {
@@ -25,12 +27,8 @@ function App() {
         </Box>
         <Products />
         <Footer />
-        {
-          /*
-            searchBox
-            appdrawer
-          */
-        }
+        <AppDrawer />
+        <Search />
         <Box sx={{width: '100%', height: '500px'}}></Box>
       </Container>  
     </ThemeProvider>
