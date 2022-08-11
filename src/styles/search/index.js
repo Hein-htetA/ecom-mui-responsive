@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, TextField } from "@mui/material";
 import { Colors } from "../theme";
 
 export const SearchBoxContainer = styled(Box)(({ theme }) => ({
@@ -13,4 +13,25 @@ export const SearchBoxContainer = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     zIndex: 99999,
     opacity: 0.9
+}));
+
+export const SearchField = styled(TextField)(({ theme }) => ({
+
+    '.MuiInputLabel-root': {
+        color: Colors.secondary,
+    },
+
+    '.MuiInput-root': {
+        fontSize: '1rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '2rem'
+        },
+        color: Colors.secondary
+    },
+
+    '.MuiInput-root::before': {
+        borderBottom: `1px solid ${Colors.secondary}`,
+    },
+
+    padding: '0 0 0 40px'
 }))

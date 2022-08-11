@@ -8,9 +8,17 @@ import Products from './components/products';
 import Footer from './components/footer';
 import AppDrawer from './components/drawer.js';
 import Search from './components/search';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [showSearch, setShowSearch] = useState(false);
+
+  const toggleSearch = () => {
+    setShowSearch((showSearch) => (!showSearch))
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Container
@@ -19,7 +27,7 @@ function App() {
           backgroundColor: "#fff"
         }}
       >
-        <Appbar />
+        <Appbar setShowSearch={toggleSearch}/>
         <Banner />
         <Promotions />
         <Box display={'flex'} justifyContent='center' p={4}>
@@ -28,7 +36,7 @@ function App() {
         <Products />
         <Footer />
         <AppDrawer />
-        <Search />
+        <Search showSearch={showSearch} setShowSearch={toggleSearch}/>
         <Box sx={{width: '100%', height: '500px'}}></Box>
       </Container>  
     </ThemeProvider>
