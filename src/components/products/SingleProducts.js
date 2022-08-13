@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
 
-export default function SingleProduct({product, matches}) {
+export default function SingleProduct({ product, matches, handleClickOpen }) {
     return(
         <>
             <Product>
@@ -19,7 +19,7 @@ export default function SingleProduct({product, matches}) {
                         <ProductActionButton>
                             <ShareIcon color='primary' />
                         </ProductActionButton>
-                        <ProductActionButton>
+                        <ProductActionButton onClick={handleClickOpen}>
                             <FitScreenIcon />
                         </ProductActionButton>
                     </Stack>

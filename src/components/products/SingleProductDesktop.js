@@ -7,7 +7,7 @@ import FitScreenIcon from '@mui/icons-material/FitScreen';
 import { useState } from 'react';
 
 
-export default function SingleProductDesktop({product, matches}) {
+export default function SingleProductDesktop({product, matches, handleClickOpen}) {
 
     const [showOptions, setShowOptions] = useState(false);
 
@@ -36,7 +36,7 @@ export default function SingleProductDesktop({product, matches}) {
                         <ProductActionButton>
                             <ShareIcon color='primary' />
                         </ProductActionButton>
-                        <ProductActionButton>
+                        <ProductActionButton onClick={handleClickOpen}>
                             <FitScreenIcon />
                         </ProductActionButton>
                     </Stack>

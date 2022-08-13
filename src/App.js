@@ -10,7 +10,6 @@ import AppDrawer from './components/drawer.js';
 import Search from './components/search';
 import { useState } from 'react';
 
-
 function App() {
 
   const [showSearch, setShowSearch] = useState(false);
